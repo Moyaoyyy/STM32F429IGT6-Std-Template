@@ -1,0 +1,62 @@
+{
+    // C/C++ IntelliSense 配置文件
+    // 用于配置 VS Code 的代码智能提示、语法检查和代码导航功能
+    "configurations": [
+        {
+            "name": "Win32",
+            // 头文件包含路径配置
+            // IntelliSense 将在这些目录中搜索头文件
+            "includePath": [
+                // STM32 CMSIS 标准接口库（Cortex 微控制器软件接口标准）
+                "${workspaceFolder}/mcu/Libraries/CMSIS",
+                // STM32 标准库驱动库
+                "${workspaceFolder}/mcu/Libraries/STM32F4xx_StdPeriph_Driver",
+                // FreeRTOS 实时操作系统核心头文件
+                "${workspaceFolder}/crm/freeRTOS/include",
+                // FreeRTOS ARM Cortex-M4F 移植层
+                "${workspaceFolder}/crm/freeRTOS/portable/GCC/ARM_CM4F",
+                // 用户主程序代码
+                "${workspaceFolder}/mcu/user",
+                
+                // 板级支持包（BSP）头文件示例，如有新增外设驱动，可在此添加
+                "${workspaceFolder}/mcu/bsp/led/Inc",
+                "${workspaceFolder}/mcu/bsp/usart/Inc",
+                "${workspaceFolder}/mcu/bsp/adc/Inc",
+                "${workspaceFolder}/mcu/bsp/dht11/Inc",
+                "${workspaceFolder}/mcu/bsp/dwt/Inc",
+                "${workspaceFolder}/mcu/bsp/iic/Inc",
+                "${workspaceFolder}/mcu/bsp/oled/Inc",
+
+                // APP 应用层头文件示例，如有新增应用，可在此添加
+                "${workspaceFolder}/mcu/app/app_data/Inc",
+                "${workspaceFolder}/mcu/app/task_display/Inc",
+                "${workspaceFolder}/mcu/app/task_light/Inc",
+                "${workspaceFolder}/mcu/app/task_temphum/Inc",
+                "${workspaceFolder}/mcu/app/task_test/Inc",
+                // 扩展工具库，朱宁的祖传代码
+                "${workspaceFolder}/mcu/libx",
+
+                // ARM GCC 编译器内置头文件（包含 stdint.h、stddef.h 等标准库）
+                "D:/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/13.3.1/include",
+                "D:/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/lib/gcc/arm-none-eabi/13.3.1/include-fixed",
+                "D:/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/arm-none-eabi/include"
+            ],
+            // 预定义宏（用于条件编译）
+            "defines": [
+                // 启用 STM32 HAL 库
+                "USE_HAL_DRIVER",
+                // 指定芯片型号为 STM32F429
+                "STM32F429xx"
+            ],
+            // ARM GCC 交叉编译器路径
+            "compilerPath": "D:/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc.exe",
+            // C 语言标准版本
+            "cStandard": "c17",
+            // C++ 语言标准版本
+            "cppStandard": "gnu++14",
+            // IntelliSense 模式（针对 ARM 平台的 GCC 编译器）
+            "intelliSenseMode": "gcc-arm"
+        }
+    ],
+    "version": 4
+}

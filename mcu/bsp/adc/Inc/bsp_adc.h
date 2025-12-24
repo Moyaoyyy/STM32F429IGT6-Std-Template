@@ -1,0 +1,38 @@
+#ifndef __BSP_PHOTORESISTOR_H
+#define	__BSP_PHOTORESISTOR_H
+
+
+#include "stm32f4xx.h"
+#include "stm32f4xx_conf.h"
+
+
+// ADC 编号选择
+// 可以是 ADC1/2，如果使用ADC3，中断相关的要改成ADC3的
+#define    ADC_APBxClock_FUN             RCC_APB2PeriphClockCmd
+#define    ADCx                          ADC1
+#define    ADC_CLK                       RCC_APB2Periph_ADC1
+
+// ADC GPIO宏定义
+// 注意：用作ADC采集的IO必须没有复用，否则采集电压会有影响
+#define    ADC_GPIO_APBxClock_FUN        RCC_AHB1PeriphClockCmd
+#define    ADC_GPIO_CLK                  RCC_AHB1Periph_GPIOA  
+#define    ADC_PORT                      GPIOA
+#define    ADC_PIN                       GPIO_Pin_4
+// ADC 通道宏定义
+#define    ADC_CHANNEL                   ADC_Channel_4
+
+// ADC 中断相关宏定义
+#define    ADC_IRQ                       ADC_IRQn
+#define    ADC_IRQHandler                ADC_IRQHandler
+
+// DO 数字量GPIO宏定义
+#define    PhotoResistor_GPIO_APBxClock_FUN        RCC_AHB1PeriphClockCmd
+#define    PhotoResistor_GPIO_CLK                  RCC_AHB1Periph_GPIOG
+#define    PhotoResistor_PORT                      GPIOG
+#define    PhotoResistor_PIN                       GPIO_Pin_3
+
+void PhotoResistor_Init(void);
+
+
+#endif /* __BSP_PHOTORESISTOR_H */
+
